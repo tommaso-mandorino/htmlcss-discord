@@ -8,19 +8,11 @@
 
 /* #region Variables */
 :root {
-    /* Borders */
-    --border-size: 1px;
-    --border-style: dashed;
 
-    --border-light: var(--border-size) var(--border-style) white;
-    --border-dark: var(--border-size) var(--border-style) black;
-    
-    --section-padding: 50px 0;
-    
-    /* #region Link buttons */
-    --link-btn-padding: 15px 30px;
-
+    /* Link buttons */
     --link-btn-radius: 25px;
+    
+    --link-btn-padding: 15px 30px;
 
     --link-btn-bg-color: white;
     --link-btn-text-color: black;
@@ -30,63 +22,53 @@
 
     --link-btn-alternative-bg-color: #8ea1e1;
     --link-btn-alternative-text-color: white;
-    /* #endregion Link buttons */
-
-    /* #region Main menu */
-    --main-menu-text-size: 18px;
-    --main-menu-text-color: white;
-    /* #endregion Main menu */
-
-    /* #region Banner */
-    --banner-text-alignment: center;
-    --banner-text-size: 25px;
-    --banner-text-color: white;
-    /* #endregion Banner */
 
     /* Header */
     --header-bg-color: #3161e0;
 
+    /* Main menu */
+    --main-menu-text-size: 18px;
     --main-menu-text-color: white;
 
+    /* Banner */
+    --banner-text-alignment: center;
+
+    --main-title-heading-size: 60px;
+    --main-title-heading-color: white;
+
+    --banner-paragraph-size: 25px;
+    --banner-paragraph-color: white;
+
+    /* Text panels */
+    --panel-text-heading-size: 50px;
+    --panel-text-heading-color: black;
+
+    --panel-text-paragraph-size: 20px;
+    --panel-text-paragraph-color: black;
+
+    /* Footer */
+    --footer-bg-color: #23272a;
+
+    --footer-separation-line-thickness: 2px;
+    --footer-separation-line-style: solid;
+    --footer-separation-line-color: #363f55;
+
+    /* Other links section */
+    --headings-color: #7289da;
+
+    /* -------------------------------------------------------------------------------- */
     /* Section */
     --section-odd-bg-color: white;
     --section-even-bg-color: lightgrey;
 
-    /* Panels */
-    --panel-single-bg-color: green;
-
-    /* Footer */
-    --footer-color: #23272a;
-
-    /* Bottom bar */
-    --bottom-bar-bg-color: aquamarine;
+     --section-padding: 50px 0;
+    /* -------------------------------------------------------------------------------- */
 }
 /* #endregion Variables */
 
-
-/* #region Utility */
-
-/* Containers */
-.container {
-    margin: 0 auto;
-    &.container-normal {
-        max-width: 1300px;
-    }
-    &.container-small {
-        max-width: 1000px;
-    }
-}
-
-/* #endregion Utility */
-
 /* -------------------------------------------------------------------------------- */
-
 /* #region Debug */
 .debug {
-        #banner-section {
-            padding: var(--section-padding);
-            background-color: var(--banner-section-bg-color);
-        }
     main {
         .page-section {
             padding: var(--section-padding);
@@ -112,7 +94,7 @@
         }
     }
     footer {
-        background-color: var(--footer-color);
+        background-color: var(--footer-bg-color);
         #other-links-section {
             padding: 10px 0 40px;
             .link-section {
@@ -127,53 +109,24 @@
                 }
             }
         }
-        #bottom-bar-section {
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
-            padding-top: 30px;
-            #bottom-bar {
-                justify-content: space-between;
-                padding: 15px 0;
-                background-color: var(--bottom-bar-bg-color);
-                .bottom-bar-item {
-                    padding: 5px 10px;
-                    border: var(--border-dark);
-                    background-color: pink;
-                }
-            }
-        }
     }
 }
-/* #region Debug */
-
+/* #endregion Debug */
 /* -------------------------------------------------------------------------------- */
 
-/* #region Official version */
 body {
-    font-family: Helvetica, sans-serif;
 
-    img {
-        width: 100%;
-    }
-
-    /* Inizio da aggiustare */
-    h1 {
-        margin: 50px;
-        font-size: 60px;
-    }
-
-    h2 {
-        margin: 50px;
-        font-size: 50px;
-    }
-
-    p {
-        margin: 50px;
-    }
-    /* Fine da aggiustare */
-
+    /* #region Utilities */
     .d-flex {
         display: flex;
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: 1300px;
+        &.container-small {
+            max-width: 1000px;
+        }
     }
 
     .link-btn {
@@ -186,11 +139,27 @@ body {
             background-color: var(--link-btn-dark-bg-color);
             color: var(--link-btn-dark-text-color);
         }
+        &.link-btn-alternative {
+            background-color: var(--link-btn-alternative-bg-color);
+            color: var(--link-btn-alternative-text-color);
+        }
+    }
+    /* #endregion Utilities */
+
+    /* #region Globals */
+    font-family: Helvetica, sans-serif;
+
+    img {
+        width: 100%;
+    }
+    /* #endregion Globals */
+
+    h1, h2, p {
+        margin: 50px;
     }
 
-    .entity {
-        
-        font-weight: bold;
+    h1 {
+        font-size: var(--main-title-heading-size);
     }
 
     /* #region Header */
@@ -231,16 +200,18 @@ body {
 
         /* #region Banner section */
         #banner-section {
+            padding: var(--section-padding);
             background-image: url("./../img/jumbo.png");
             background-size: 100%;
             #banner {
                 min-height: 520px;
                 text-align: var(--banner-text-alignment);
-                font-size: var(--banner-text-size);
-                color: var(--banner-text-color);
-                .div {
-
-
+                font-size: var(--banner-paragraph-size);
+                color: var(--banner-paragraph-color);
+                .banner-links {
+                    .link-btn {
+                        margin: 0 15px;
+                    }
                 }
             }
         }
@@ -251,15 +222,35 @@ body {
 
     /* #region Main */
     main {
-
+        .page-section {
+            .panel {
+                &.panel-text {
+                    h2 {
+                        font-size: var(--panel-text-heading-size);
+                        color: var(--panel-text-heading-color);
+                    }
+                    p {
+                        font-size: var(--panel-text-paragraph-size);
+                        color: var(--panel-text-paragraph-color);
+                    }
+                }
+            }
+        }
     }
     /* #region Main */
 
     /* #region Footer */
     footer {
-
+        #bottom-bar-section {
+            border-top: var(--footer-separation-line-thickness) var(--footer-separation-line-style) var(--footer-separation-line-color);
+            padding-top: 30px;
+            padding-bottom: 100px;
+            #bottom-bar {
+                justify-content: space-between;
+                padding: 15px 0;
+            }
+        }
     }
     /* #region Footer */
 
 }
-/* #endregion Official version */
