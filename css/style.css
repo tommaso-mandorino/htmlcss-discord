@@ -3,6 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+}
+a {
     text-decoration-line: none;
 }
 
@@ -54,7 +59,8 @@
     --footer-separation-line-color: #363f55;
 
     /* Other links section */
-    --headings-color: #7289da;
+    --other-link-section-headings-color: #7289da;
+    --other-link-section-links-color: white;
 
     /* -------------------------------------------------------------------------------- */
     /* Section */
@@ -66,57 +72,16 @@
 }
 /* #endregion Variables */
 
-/* -------------------------------------------------------------------------------- */
-/* #region Debug */
-.debug {
-    main {
-        .page-section {
-            padding: var(--section-padding);
-            &:nth-child(odd) {
-                background-color: var(--section-odd-bg-color);
-            }
-            &:nth-child(even) {
-                background-color: var(--section-even-bg-color);
-            }
-            .panel {
-                &.panel-image {
-                    width: 60%;
-                }
-                &.panel-text {
-                    width: 40%;
-                }
-                &.panel-single {
-                    width: 100%;
-                    height: 1000px;
-                    background-color: var(--panel-single-bg-color);
-                }
-            }
-        }
-    }
-    footer {
-        background-color: var(--footer-bg-color);
-        #other-links-section {
-            padding: 10px 0 40px;
-            .link-section {
-                flex-grow: 1;
-                height: 500px;
-                border: var(--border-light);
-                background-color: cadetblue;
-                &:first-child {
-                    border: var(--border-dark);
-                    width: 150px;
-                    background-color: indianred;
-                }
-            }
-        }
-    }
-}
-/* #endregion Debug */
-/* -------------------------------------------------------------------------------- */
-
 body {
+    /* #region Utility classes */
 
-    /* #region Utilities */
+    /* Debug */
+    &.debug {
+        * {
+            border: 1px solid red;
+        }
+    }
+
     .d-flex {
         display: flex;
     }
@@ -144,7 +109,7 @@ body {
             color: var(--link-btn-alternative-text-color);
         }
     }
-    /* #endregion Utilities */
+    /* #endregion Utility classes */
 
     /* #region Globals */
     font-family: Helvetica, sans-serif;
@@ -220,6 +185,32 @@ body {
     }
     /* #region Header */
 
+    /* -------------------------------------------------------------------------------- */
+    main {
+        .page-section {
+            padding: var(--section-padding);
+            &:nth-child(odd) {
+                background-color: var(--section-odd-bg-color);
+            }
+            &:nth-child(even) {
+                background-color: var(--section-even-bg-color);
+            }
+            .panel {
+                &.panel-image {
+                    width: 60%;
+                }
+                &.panel-text {
+                    width: 40%;
+                }
+                &.panel-single {
+                    width: 100%;
+                    height: 1000px;
+                    background-color: var(--panel-single-bg-color);
+                }
+            }
+        }
+    }
+    /* -------------------------------------------------------------------------------- */
     /* #region Main */
     main {
         .page-section {
@@ -239,8 +230,39 @@ body {
     }
     /* #region Main */
 
+    /* -------------------------------------------------------------------------------- */
+    footer {
+        #other-links-section {
+            padding: 10px 0 40px;
+            section {
+                flex-grow: 1;
+                &:first-child {
+                    border: var(--border-dark);
+                    width: 150px;
+                }
+            }
+        }
+    }
+    /* -------------------------------------------------------------------------------- */
     /* #region Footer */
     footer {
+        background-color: var(--footer-bg-color);
+        #other-links-section {
+            section {
+                h3, h4 {
+                    color: var(--other-link-section-headings-color);
+                }
+                span {
+
+                }
+                a {
+                    color: var(--other-link-section-links-color);
+                }
+                .social-links {
+                    
+                }
+            }
+        }
         #bottom-bar-section {
             border-top: var(--footer-separation-line-thickness) var(--footer-separation-line-style) var(--footer-separation-line-color);
             padding-top: 30px;
@@ -252,5 +274,4 @@ body {
         }
     }
     /* #region Footer */
-
 }
