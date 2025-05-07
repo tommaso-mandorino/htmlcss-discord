@@ -10,7 +10,7 @@
 /* #region Variables */
 :root {
     /* Borders */
-    --border-size: 2px;
+    --border-size: 1px;
     --border-style: dashed;
 
     --border-light: var(--border-size) var(--border-style) white;
@@ -22,10 +22,12 @@
     /* #region Colors */
 
     /* Header */
-    --header-bg-color: lightblue;
+    --header-bg-color: #3161e0;
 
-    /* Menu */
-    --main-menu-column-bg-color: goldenrod;
+    --main-menu-text-color: white;
+
+    --login-button-bg-color: white;
+    --login-button-text-color: black;
 
     /* Banner */
     --banner-section-bg-color: navy;
@@ -58,7 +60,7 @@
     display: flex;
     margin: 0 auto;
     &.container-normal {
-        max-width: 1200px;
+        max-width: 1300px;
     }
     &.container-small {
         max-width: 1000px;
@@ -71,34 +73,6 @@
 
 /* #region Debug */
 .debug {
-    font-size: 20px;
-
-    /* #region Header */
-    header {
-        padding-bottom: 5px;
-        background-color: var(--header-bg-color);
-        #main-menu-section {
-            padding: 15px;
-            #container-menu {
-                .main-menu-column {
-                    padding: 10px;
-                    border: var(--border-dark);
-                    background-color: var(--main-menu-column-bg-color);
-                    &:nth-child(1) {
-                        width: 20%;
-                    }
-                    &:nth-child(2) {
-                        width: 60%;
-                        text-align: center;
-                    }
-                    &:nth-child(3) {
-                        width: 20%;
-                        text-align: right;
-                    }
-                }
-            }
-        }
-
         #banner-section {
             padding: var(--section-padding);
             background-color: var(--banner-section-bg-color);
@@ -108,9 +82,6 @@
                 background-color: var(--banner-bg-color);
             }
         }
-
-    }
-    /* #endregion Header */
 
     /* #region Main */
     main {
@@ -182,3 +153,75 @@
 
 }
 /* #region Debug */
+
+
+
+/* #region Official version */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+
+    img {
+        width: 100%;
+    }
+
+    .account-link {
+        border-radius: 25px;
+        padding: 10px;
+    }
+
+    /* #region Header */
+    header {
+        /* #region Main menu */
+        #main-menu-section {
+            padding: 15px;
+            background-color: var(--header-bg-color);
+
+            #container-menu {
+                .main-menu-column {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    &:nth-child(1) {
+                        flex-grow: 1;
+                        justify-content: flex-start;
+                        a {
+                            display: flex;
+                        }
+                    }
+                    &:nth-child(2) {
+                        flex-grow: 2;
+                        justify-content: space-evenly;
+                        a {
+                            color: var(--main-menu-text-color);
+                        }
+                    }
+                    &:nth-child(3) {
+                        flex-grow: 1;
+                        justify-content: flex-end;
+                        a {
+                            background-color: var(--login-button-bg-color);
+                            color: var(--login-button-text-color);
+                        }
+                    }
+                }
+            }
+        }
+        /* #endregion Main menu */
+    }
+    /* #region Header */
+
+    /* #region Main */
+    main {
+
+    }
+    /* #region Main */
+
+    /* #region Footer */
+    footer {
+
+    }
+    /* #region Footer */
+
+}
+/* #endregion Official version */
