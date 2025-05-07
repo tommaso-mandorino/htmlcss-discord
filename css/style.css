@@ -1,0 +1,184 @@
+/* #region Resets */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration-line: none;
+}
+/* #endregion Resets */
+
+
+/* #region Variables */
+:root {
+    /* Borders */
+    --border-size: 2px;
+    --border-style: dashed;
+
+    --border-light: var(--border-size) var(--border-style) white;
+    --border-dark: var(--border-size) var(--border-style) black;
+
+    /* Paddings */
+    --section-padding: 50px 0;
+
+    /* #region Colors */
+
+    /* Header */
+    --header-bg-color: lightblue;
+
+    /* Menu */
+    --main-menu-column-bg-color: goldenrod;
+
+    /* Banner */
+    --banner-section-bg-color: navy;
+    --banner-bg-color: orchid;
+
+    /* Section */
+    --section-odd-bg-color: white;
+    --section-even-bg-color: lightgrey;
+
+    /* Panels */
+    --panel-single-bg-color: green;
+    --panel-image-bg-color: dodgerblue;
+    --panel-text-bg-color: pink;
+
+    /* Footer */
+    --footer-color: #23272a;
+
+    /* Bottom bar */
+    --bottom-bar-bg-color: aquamarine;
+
+    /* #endregion Colors */
+}
+/* #endregion Variables */
+
+
+/* #region Utility */
+
+/* Containers */
+.container {
+    display: flex;
+    margin: 0 auto;
+    &.container-normal {
+        max-width: 1200px;
+    }
+    &.container-small {
+        max-width: 1000px;
+    }
+}
+
+/* #endregion Utility */
+
+
+
+/* #region Debug */
+.debug {
+    font-size: 20px;
+
+    /* #region Header */
+    header {
+        padding-bottom: 5px;
+        background-color: var(--header-bg-color);
+        #main-menu-section {
+            padding: 15px;
+            #container-menu {
+                .main-menu-column {
+                    padding: 10px;
+                    border: var(--border-dark);
+                    background-color: var(--main-menu-column-bg-color);
+                    &:nth-child(1) {
+                        width: 20%;
+                    }
+                    &:nth-child(2) {
+                        width: 60%;
+                        text-align: center;
+                    }
+                    &:nth-child(3) {
+                        width: 20%;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+
+        #banner-section {
+            padding: var(--section-padding);
+            background-color: var(--banner-section-bg-color);
+            #banner {
+                border: var(--border-dark);
+                height: 500px;
+                background-color: var(--banner-bg-color);
+            }
+        }
+
+    }
+    /* #endregion Header */
+
+    /* #region Main */
+    main {
+
+        .page-section {
+            padding: var(--section-padding);
+            &:nth-child(odd) {
+                background-color: var(--section-odd-bg-color);
+            }
+            &:nth-child(even) {
+                background-color: var(--section-even-bg-color);
+            }
+            .panel {
+                border: var(--border-dark);
+                height: 500px;
+                &.panel-image {
+                    width: 60%;
+                    background-color: var(--panel-image-bg-color);
+                }
+                &.panel-text {
+                    width: 40%;
+                    background-color: var(--panel-text-bg-color);
+                }
+                &.panel-single {
+                    width: 100%;
+                    height: 1000px;
+                    background-color: var(--panel-single-bg-color);
+                }
+            }
+        }
+
+    }
+    /* #endregion Main */
+
+    /* #region Footer */
+    footer {
+        background-color: var(--footer-color);
+        #other-links-section {
+            padding: 10px 0 40px;
+            .link-section {
+                flex-grow: 1;
+                height: 500px;
+                border: var(--border-light);
+                background-color: cadetblue;
+                &:first-child {
+                    border: var(--border-dark);
+                    width: 150px;
+                    background-color: indianred;
+                }
+            }
+        }
+        #bottom-bar-section {
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            padding-top: 30px;
+            #bottom-bar {
+                justify-content: space-between;
+                padding: 15px 0;
+                background-color: var(--bottom-bar-bg-color);
+                .bottom-bar-item {
+                    padding: 5px 10px;
+                    border: var(--border-dark);
+                    background-color: pink;
+                }
+            }
+        }
+    }
+    /* #endregion Footer */
+
+}
+/* #region Debug */
