@@ -29,19 +29,19 @@
         <!-- #region Main menu -->
         <div id="main-menu-section">
             <nav id="container-menu" class="container d-flex">
-                <span class="main-menu-column">
+                <span class="main-menu-column d-flex">
                     <a href="./">
                         <img src="./img/logo.svg" alt="Discord logo">
                     </a>
                 </span>
-                <span class="main-menu-column">
+                <span class="main-menu-column d-flex">
                     <a href="#">Scarica</a>
                     <a href="#">Perché Discord</a>
                     <a href="#">Nitro</a>
                     <a href="#">Sicurezza</a>
                     <a href="#">Assistenza</a>
                 </span>
-                <span class="main-menu-column">
+                <span class="main-menu-column d-flex">
                     <a href="#" class="link-btn">Accedi</a>
                 </span>
             </nav>
@@ -81,6 +81,7 @@
                 </div>
             </div>
         </div>
+        <div class="wave"></div>
 
         <div class="page-section">
             <div class="container d-flex">
@@ -94,6 +95,7 @@
                 </div>
             </div>
         </div>
+        <div class="wave"></div>
 
         <div class="page-section">
             <div class="container d-flex">
@@ -108,14 +110,19 @@
                 </div>
             </div>
         </div>
+        <div class="wave"></div>
 
         <div class="page-section">
             <div class="container">
-                <h2>Tecnologia affidabile per tenersi in contatto</h2>
-                <p>Video e audio a bassa latenza ti faranno sentire come se foste tutti nella stessa stanza. Fai
-                    ciao in video, guarda gli amici giocare in streaming, o riunitevi in una sessione di disegno con
-                    la condivisione schermo.</p>
-                <img src="./img/item4-big.svg" alt="Tecnologia affidabile">
+                <div class="panel panel-text panel-max-width">
+                    <h2>Tecnologia affidabile per tenersi in contatto</h2>
+                    <p>Video e audio a bassa latenza ti faranno sentire come se foste tutti nella stessa stanza. Fai
+                        ciao in video, guarda gli amici giocare in streaming, o riunitevi in una sessione di disegno con
+                        la condivisione schermo.</p>
+                </div>
+                <div class="panel panel-image panel-max-width">
+                    <img src="./img/item4-big.svg" alt="Tecnologia affidabile">
+                </div>
             </div>
         </div>
 
@@ -124,15 +131,19 @@
 
     <!-- #region Footer -->
     <footer>
-
-        <!-- #endregion Other links -->
+        <!-- #region Other links -->
         <div id="other-links-section" class="container d-flex">
 
             <section>
                 <h3>Il tuo posto per parlare</h3>
-                <span>Italiano</span>
-                <i class="fa-solid fa-angle-down"></i>
-                <ul class="social-links d-flex">
+
+                <span class="language-selection-section d-flex">
+                    <img src="./img/ita.png" alt="Lingua italiana">
+                    <span>Italiano</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </span>
+
+                <ul class="social-links-section d-flex">
                     <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
@@ -180,7 +191,7 @@
             </section>
 
             <section>
-                <h3>Norme</h3>
+                <h4>Norme</h4>
                 <ul>
                     <li><a href="#">Scarica</a></li>
                     <li><a href="#">Perché Discord</a></li>

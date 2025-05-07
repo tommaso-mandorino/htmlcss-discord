@@ -17,7 +17,7 @@ a {
     /* Link buttons */
     --link-btn-radius: 25px;
     
-    --link-btn-padding: 15px 30px;
+    --link-btn-padding: 15px 20px;
 
     --link-btn-bg-color: white;
     --link-btn-text-color: black;
@@ -44,6 +44,12 @@ a {
     --banner-paragraph-size: 25px;
     --banner-paragraph-color: white;
 
+    /* Page section */
+    --page-section-padding: 50px 0;
+
+    --page-section-bg-color: white;
+    --page-section-wave-bg-color: #f6f6f6;
+
     /* Text panels */
     --panel-text-heading-size: 50px;
     --panel-text-heading-color: black;
@@ -61,14 +67,6 @@ a {
     /* Other links section */
     --other-link-section-headings-color: #7289da;
     --other-link-section-links-color: white;
-
-    /* -------------------------------------------------------------------------------- */
-    /* Section */
-    --section-odd-bg-color: white;
-    --section-even-bg-color: lightgrey;
-
-     --section-padding: 50px 0;
-    /* -------------------------------------------------------------------------------- */
 }
 /* #endregion Variables */
 
@@ -109,6 +107,12 @@ body {
             color: var(--link-btn-alternative-text-color);
         }
     }
+
+    .wave {
+        height: 100px;
+        background-image: url("../img/wave.svg");
+        opacity: 0.01;
+    }
     /* #endregion Utility classes */
 
     /* #region Globals */
@@ -136,7 +140,6 @@ body {
 
             #container-menu {
                 .main-menu-column {
-                    display: flex;
                     align-items: center;
                     padding: 10px;
                     &:nth-child(1) {
@@ -165,7 +168,7 @@ body {
 
         /* #region Banner section */
         #banner-section {
-            padding: var(--section-padding);
+            padding: var(--page-section-padding);
             background-image: url("./../img/jumbo.png");
             background-size: 100%;
             #banner {
@@ -185,37 +188,13 @@ body {
     }
     /* #region Header */
 
-    /* -------------------------------------------------------------------------------- */
-    main {
-        .page-section {
-            padding: var(--section-padding);
-            &:nth-child(odd) {
-                background-color: var(--section-odd-bg-color);
-            }
-            &:nth-child(even) {
-                background-color: var(--section-even-bg-color);
-            }
-            .panel {
-                &.panel-image {
-                    width: 60%;
-                }
-                &.panel-text {
-                    width: 40%;
-                }
-                &.panel-single {
-                    width: 100%;
-                    height: 1000px;
-                    background-color: var(--panel-single-bg-color);
-                }
-            }
-        }
-    }
-    /* -------------------------------------------------------------------------------- */
     /* #region Main */
     main {
         .page-section {
+            padding: var(--page-section-padding);
             .panel {
                 &.panel-text {
+                    width: 40%;
                     h2 {
                         font-size: var(--panel-text-heading-size);
                         color: var(--panel-text-heading-color);
@@ -225,41 +204,66 @@ body {
                         color: var(--panel-text-paragraph-color);
                     }
                 }
+                &.panel-image {
+                    width: 60%;
+                }
+                &.panel-max-width {
+                    width: 100%;
+                }
+            }
+            + .wave {
+                background-color: red;
             }
         }
     }
     /* #region Main */
-
     /* -------------------------------------------------------------------------------- */
     footer {
         #other-links-section {
-            padding: 10px 0 40px;
+            /* padding: var(--page-section-padding); */
             section {
                 flex-grow: 1;
                 &:first-child {
-                    border: var(--border-dark);
+                    flex-grow: 2;
                     width: 150px;
                 }
             }
         }
     }
-    /* -------------------------------------------------------------------------------- */
     /* #region Footer */
     footer {
+        font-weight: bold;
         background-color: var(--footer-bg-color);
         #other-links-section {
+            padding: 100px 0 30px;
             section {
                 h3, h4 {
+                    padding-bottom: 10px;
                     color: var(--other-link-section-headings-color);
                 }
-                span {
-
+                h3 {
+                    font-size: 36px;
                 }
                 a {
+                    display: inline-block;
+                    padding: 10px 0;
                     color: var(--other-link-section-links-color);
                 }
-                .social-links {
-                    
+                .language-selection-section {
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 30%;
+                    padding: 10px 0;
+                    color: white;
+                    img {
+                        width: auto;
+                        height: 1em;
+                    }
+                }
+                .social-links-section {
+                    justify-content: space-between;
+                    width: 50%;
+                    font-size: 20px;
                 }
             }
         }
