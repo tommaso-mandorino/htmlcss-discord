@@ -54,8 +54,6 @@
 
     /* Panels */
     --panel-single-bg-color: green;
-    --panel-image-bg-color: dodgerblue;
-    --panel-text-bg-color: pink;
 
     /* Footer */
     --footer-color: #23272a;
@@ -81,12 +79,7 @@
 
 /* #endregion Utility */
 
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------- */
 
 /* #region Debug */
 .debug {
@@ -104,15 +97,11 @@
                 background-color: var(--section-even-bg-color);
             }
             .panel {
-                border: var(--border-dark);
-                height: 500px;
                 &.panel-image {
                     width: 60%;
-                    background-color: var(--panel-image-bg-color);
                 }
                 &.panel-text {
                     width: 40%;
-                    background-color: var(--panel-text-bg-color);
                 }
                 &.panel-single {
                     width: 100%;
@@ -157,29 +146,7 @@
 }
 /* #region Debug */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------- */
 
 /* #region Official version */
 body {
@@ -189,14 +156,21 @@ body {
         width: 100%;
     }
 
+    /* Inizio da aggiustare */
     h1 {
         margin: 50px;
         font-size: 60px;
     }
 
-    p {
-        margin: 30px;
+    h2 {
+        margin: 50px;
+        font-size: 50px;
     }
+
+    p {
+        margin: 50px;
+    }
+    /* Fine da aggiustare */
 
     .d-flex {
         display: flex;
