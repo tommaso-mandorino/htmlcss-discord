@@ -1,11 +1,10 @@
-/* #region Resets */
+/* Resets */
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration-line: none;
 }
-/* #endregion Resets */
-
 
 /* #region Variables */
 :root {
@@ -15,23 +14,39 @@
 
     --border-light: var(--border-size) var(--border-style) white;
     --border-dark: var(--border-size) var(--border-style) black;
-
-    /* Paddings */
+    
     --section-padding: 50px 0;
+    
+    /* #region Link buttons */
+    --link-btn-padding: 15px 30px;
 
-    /* #region Colors */
+    --link-btn-radius: 25px;
+
+    --link-btn-bg-color: white;
+    --link-btn-text-color: black;
+
+    --link-btn-dark-bg-color: black;
+    --link-btn-dark-text-color: white;
+
+    --link-btn-alternative-bg-color: #8ea1e1;
+    --link-btn-alternative-text-color: white;
+    /* #endregion Link buttons */
+
+    /* #region Main menu */
+    --main-menu-text-size: 18px;
+    --main-menu-text-color: white;
+    /* #endregion Main menu */
+
+    /* #region Banner */
+    --banner-text-alignment: center;
+    --banner-text-size: 25px;
+    --banner-text-color: white;
+    /* #endregion Banner */
 
     /* Header */
     --header-bg-color: #3161e0;
 
     --main-menu-text-color: white;
-
-    --login-button-bg-color: white;
-    --login-button-text-color: black;
-
-    /* Banner */
-    --banner-section-bg-color: navy;
-    --banner-bg-color: orchid;
 
     /* Section */
     --section-odd-bg-color: white;
@@ -47,8 +62,6 @@
 
     /* Bottom bar */
     --bottom-bar-bg-color: aquamarine;
-
-    /* #endregion Colors */
 }
 /* #endregion Variables */
 
@@ -57,7 +70,6 @@
 
 /* Containers */
 .container {
-    display: flex;
     margin: 0 auto;
     &.container-normal {
         max-width: 1300px;
@@ -71,21 +83,18 @@
 
 
 
+
+
+
+
+
 /* #region Debug */
 .debug {
         #banner-section {
             padding: var(--section-padding);
             background-color: var(--banner-section-bg-color);
-            #banner {
-                border: var(--border-dark);
-                height: 500px;
-                background-color: var(--banner-bg-color);
-            }
         }
-
-    /* #region Main */
     main {
-
         .page-section {
             padding: var(--section-padding);
             &:nth-child(odd) {
@@ -112,11 +121,7 @@
                 }
             }
         }
-
     }
-    /* #endregion Main */
-
-    /* #region Footer */
     footer {
         background-color: var(--footer-color);
         #other-links-section {
@@ -149,25 +154,69 @@
             }
         }
     }
-    /* #endregion Footer */
-
 }
 /* #region Debug */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /* #region Official version */
 body {
     font-family: Helvetica, sans-serif;
-    font-size: 18px;
 
     img {
         width: 100%;
     }
 
-    .account-link {
-        border-radius: 25px;
-        padding: 10px;
+    h1 {
+        margin: 50px;
+        font-size: 60px;
+    }
+
+    p {
+        margin: 30px;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .link-btn {
+        display: inline-block;
+        border-radius: var(--link-btn-radius);
+        padding: var(--link-btn-padding);
+        background-color: var(--link-btn-bg-color);
+        color: var(--link-btn-text-color);
+        &.link-btn-dark {
+            background-color: var(--link-btn-dark-bg-color);
+            color: var(--link-btn-dark-text-color);
+        }
+    }
+
+    .entity {
+        
+        font-weight: bold;
     }
 
     /* #region Header */
@@ -193,21 +242,36 @@ body {
                         flex-grow: 2;
                         justify-content: space-evenly;
                         a {
+                            font-size: var(--main-menu-text-size);
                             color: var(--main-menu-text-color);
                         }
                     }
                     &:nth-child(3) {
                         flex-grow: 1;
                         justify-content: flex-end;
-                        a {
-                            background-color: var(--login-button-bg-color);
-                            color: var(--login-button-text-color);
-                        }
                     }
                 }
             }
         }
         /* #endregion Main menu */
+
+        /* #region Banner section */
+        #banner-section {
+            background-image: url("./../img/jumbo.png");
+            background-size: 100%;
+            #banner {
+                min-height: 520px;
+                text-align: var(--banner-text-alignment);
+                font-size: var(--banner-text-size);
+                color: var(--banner-text-color);
+                .div {
+
+
+                }
+            }
+        }
+        /* #region Banner section */
+
     }
     /* #region Header */
 
