@@ -45,7 +45,7 @@ a {
     --banner-paragraph-color: white;
 
     /* Page section */
-    --page-section-padding: 150px 0;
+    --page-section-padding: 150px 0 0;
 
     --page-section-odd-bg-color: white;
     --page-section-even-bg-color: #f6f6f6;
@@ -113,9 +113,10 @@ body {
     }
 
     .wave {
+        margin-top: 150px;
         height: 100px;
         background-image: url("../img/wave.svg");
-        opacity: 1;
+        opacity: 0.03;
     }
 
     .starry {
@@ -175,7 +176,7 @@ body {
 
         /* #region Banner section */
         #banner-section {
-            padding: var(--page-section-padding);
+            padding: 50px 0;
             background-image: url("./../img/jumbo.png");
             background-size: 100%;
             #banner {
@@ -202,7 +203,7 @@ body {
                 background-color: var(--page-section-odd-bg-color);
             }
             &:nth-child(even) {
-                background-color: red;
+                background-color: var(--page-section-even-bg-color);
             }
             padding: var(--page-section-padding);
             .panel {
@@ -229,6 +230,9 @@ body {
                 &.panel-max-width {
                     width: 100%;
                     text-align: center;
+                }
+                &.download-section {
+                    padding: 50px 0 150px;
                 }
             }
         }
