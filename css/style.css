@@ -183,7 +183,8 @@ body {
         #banner-section {
             padding: 50px 0;
             background-image: url("./../img/jumbo.png");
-            background-size: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
             #banner {
                 min-height: 520px;
                 text-align: var(--banner-text-alignment);
