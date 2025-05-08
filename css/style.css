@@ -45,10 +45,10 @@ a {
     --banner-paragraph-color: white;
 
     /* Page section */
-    --page-section-padding: 50px 0;
+    --page-section-padding: 150px 0;
 
-    --page-section-bg-color: white;
-    --page-section-wave-bg-color: #f6f6f6;
+    --page-section-odd-bg-color: white;
+    --page-section-even-bg-color: #f6f6f6;
 
     /* Text panels */
     --panel-text-heading-size: 50px;
@@ -92,6 +92,10 @@ body {
         }
     }
 
+    .text-size-25px {
+        font-size: 25px;
+    }
+
     .link-btn {
         display: inline-block;
         border-radius: var(--link-btn-radius);
@@ -111,7 +115,13 @@ body {
     .wave {
         height: 100px;
         background-image: url("../img/wave.svg");
-        opacity: 0.01;
+        opacity: 1;
+    }
+
+    .starry {
+        background-image: url("../img/stars.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
     }
     /* #endregion Utility classes */
 
@@ -123,7 +133,7 @@ body {
     }
     /* #endregion Globals */
 
-    h1, h2, p {
+    h1, h2, h3, p {
         margin: 50px;
     }
 
@@ -145,9 +155,6 @@ body {
                     &:nth-child(1) {
                         flex-grow: 1;
                         justify-content: flex-start;
-                        a {
-                            display: flex;
-                        }
                     }
                     &:nth-child(2) {
                         flex-grow: 2;
@@ -191,13 +198,25 @@ body {
     /* #region Main */
     main {
         .page-section {
+            &:nth-child(odd) {
+                background-color: var(--page-section-odd-bg-color);
+            }
+            &:nth-child(even) {
+                background-color: red;
+            }
             padding: var(--page-section-padding);
             .panel {
                 &.panel-text {
                     width: 40%;
-                    h2 {
+                    h2, h3 {
                         font-size: var(--panel-text-heading-size);
                         color: var(--panel-text-heading-color);
+                    }
+                    h3 {
+                        margin: 0 auto;
+                        width: fit-content;
+                        padding: 50px;
+                        font-size: 35px;
                     }
                     p {
                         font-size: var(--panel-text-paragraph-size);
@@ -209,27 +228,13 @@ body {
                 }
                 &.panel-max-width {
                     width: 100%;
+                    text-align: center;
                 }
-            }
-            + .wave {
-                background-color: red;
             }
         }
     }
     /* #region Main */
-    /* -------------------------------------------------------------------------------- */
-    footer {
-        #other-links-section {
-            /* padding: var(--page-section-padding); */
-            section {
-                flex-grow: 1;
-                &:first-child {
-                    flex-grow: 2;
-                    width: 150px;
-                }
-            }
-        }
-    }
+
     /* #region Footer */
     footer {
         font-weight: bold;
@@ -237,11 +242,15 @@ body {
         #other-links-section {
             padding: 100px 0 30px;
             section {
-                h3, h4 {
+                flex-grow: 0.8;
+                &:first-child {
+                    flex-grow: 1;
+                }
+                h4, h5 {
                     padding-bottom: 10px;
                     color: var(--other-link-section-headings-color);
                 }
-                h3 {
+                h4 {
                     font-size: 36px;
                 }
                 a {
@@ -252,7 +261,7 @@ body {
                 .language-selection-section {
                     justify-content: space-between;
                     align-items: center;
-                    width: 30%;
+                    width: 25%;
                     padding: 10px 0;
                     color: white;
                     img {
@@ -262,7 +271,7 @@ body {
                 }
                 .social-links-section {
                     justify-content: space-between;
-                    width: 50%;
+                    width: 45%;
                     font-size: 20px;
                 }
             }
