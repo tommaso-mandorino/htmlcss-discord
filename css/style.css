@@ -117,9 +117,10 @@ body {
         height: 100px;
         background-image: url("../img/wave.svg");
         opacity: 0.03;
-        &.wave-inverted {
-            filter: invert();
-            opacity: 1;
+        &.wave-flipped {
+            margin: 0 0 150px;
+            background-color: var(--page-section-odd-bg-color);
+            transform: scale(-1);
         }
     }
 
@@ -207,7 +208,11 @@ body {
                 background-color: var(--page-section-odd-bg-color);
             }
             &:nth-child(even) {
+                padding-bottom: 150px;
                 background-color: var(--page-section-even-bg-color);
+            }
+            &:nth-child(3) {
+                padding-top: 0;
             }
             padding: var(--page-section-padding);
             .panel {
@@ -236,7 +241,7 @@ body {
                     text-align: center;
                 }
                 &.download-section {
-                    padding: 50px 0 150px;
+                    padding: 50px 0 0;
                 }
             }
         }
